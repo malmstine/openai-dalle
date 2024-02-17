@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    image: openai-dalle
+    env_file:
+      - .env
+    depends_on:
+      db:
+         condition: service_healthy
+    links:
+      - db
+  db:
+    image: postgres:latest
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-volume-openai:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openai-chat"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+volumes:
+  postgres-volume-openai:

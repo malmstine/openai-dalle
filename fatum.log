@@ -1,0 +1,30 @@
+2024-02-17 13:53:19,992 Using selector: KqueueSelector
+2024-02-17 13:53:38,909 load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-02-17 13:53:38,925 load_verify_locations cafile='/Users/ivan/PycharmProjects/openai-dalle/.venv/lib/python3.11/site-packages/certifi/cacert.pem'
+2024-02-17 13:53:40,398 Request options: {'method': 'post', 'url': '/images/generations', 'files': None, 'json_data': {'prompt': 'Порно', 'model': 'dall-e-3', 'n': 1, 'size': '1024x1024'}}
+2024-02-17 13:53:40,429 connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-02-17 13:53:40,519 connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1045c6790>
+2024-02-17 13:53:40,519 start_tls.started ssl_context=<ssl.SSLContext object at 0x10459cf80> server_hostname='api.openai.com' timeout=5.0
+2024-02-17 13:53:40,563 start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1045ca4d0>
+2024-02-17 13:53:40,564 send_request_headers.started request=<Request [b'POST']>
+2024-02-17 13:53:40,564 send_request_headers.complete
+2024-02-17 13:53:40,564 send_request_body.started request=<Request [b'POST']>
+2024-02-17 13:53:40,565 send_request_body.complete
+2024-02-17 13:53:40,565 receive_response_headers.started request=<Request [b'POST']>
+2024-02-17 13:53:41,691 receive_response_headers.complete return_value=(b'HTTP/1.1', 400, b'Bad Request', [(b'Date', b'Sat, 17 Feb 2024 10:53:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'265'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'openai-version', b'2020-10-01'), (b'openai-organization', b'user-i1gpp0x4nrgdtnlodxjo9uqq'), (b'x-request-id', b'req_286bad03ec188b5459b03ad23b3b8f58'), (b'openai-processing-ms', b'930'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=VluakqRtLZlqjvIo8R8fIPHjjb_CSTOlZ2IGbXrpgQg-1708167221-1.0-AWTf2o4kwRU9cYiXMgnIuQImR8V2yB/Snm1Tdersb9S+NOMr84HqmjqiJBAV9xl/+ZWzV+LYQkTa41Hdt6GxZKY=; path=/; expires=Sat, 17-Feb-24 11:23:41 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=L_cJmmTw11fIgesLyObLab3rFCJBlISUhJjkM6gcczs-1708167221715-0.0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'856d7ce8fab04db7-FRA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-02-17 13:53:41,693 HTTP Request: POST https://api.openai.com/v1/images/generations "HTTP/1.1 400 Bad Request"
+2024-02-17 13:53:41,693 receive_response_body.started request=<Request [b'POST']>
+2024-02-17 13:53:41,693 receive_response_body.complete
+2024-02-17 13:53:41,693 response_closed.started
+2024-02-17 13:53:41,693 response_closed.complete
+2024-02-17 13:53:41,693 HTTP Request: POST https://api.openai.com/v1/images/generations "400 Bad Request"
+2024-02-17 13:53:41,693 Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/ivan/PycharmProjects/openai-dalle/.venv/lib/python3.11/site-packages/openai/_base_client.py", line 959, in _request
+    response.raise_for_status()
+  File "/Users/ivan/PycharmProjects/openai-dalle/.venv/lib/python3.11/site-packages/httpx/_models.py", line 759, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '400 Bad Request' for url 'https://api.openai.com/v1/images/generations'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2024-02-17 13:53:41,714 Not retrying
+2024-02-17 13:53:41,715 Re-raising status error
